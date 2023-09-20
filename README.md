@@ -1,2 +1,2 @@
 # pareshaan
-This is a bug tracking system designed to be extremely simple, and minimalistic but yet will cover all essential features.
+A simple bug-tracking server software that aims to be minimalistic and fulfill all the needs of small to medium software teams working in a remote setup.
