@@ -5,5 +5,5 @@ public enum Status {
     CLOSE,
     IN_PROGRESS,
     REOPEN,
-    DONE
+    WAITING_FOR_RESPONSE
 }

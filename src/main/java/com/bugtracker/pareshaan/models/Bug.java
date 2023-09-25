@@ -1,6 +1,8 @@
 package com.bugtracker.pareshaan.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -8,6 +10,7 @@ import lombok.Data;
 @Data
 public class Bug {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String title;
     String stepsToReproduce;
@@ -17,7 +20,7 @@ public class Bug {
     String links;
     int project_id;
     Status status;
-    User reporter;
-    User assignee;
-    User resolver;
+    Hero reporter;
+    Hero assignee;
+    Hero resolver;
 }

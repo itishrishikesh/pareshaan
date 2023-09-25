@@ -6,7 +6,7 @@ CREATE TABLE bug (
     attachments TEXT, -- Any attachments related to the bug (e.g., screenshots)
     links TEXT, -- Any relevant links (e.g., to related bugs or resources)
     project_id INT, -- Identifier for the project this bug is associated with
-    status ENUM('New', 'Open', 'In Progress', 'Resolved', 'Closed'), -- Current status of the bug
+    status ENUM('OPEN', 'CLOSE', 'IN_PROGRESS', 'REOPEN', 'WAITING_FOR_RESPONSE'), -- Current status of the bug
     assigned_to INT, -- Identifier for the user this bug is assigned to
     resolved BOOLEAN, -- Whether or not the bug has been resolved
     FOREIGN KEY (project_id) REFERENCES project(id),
