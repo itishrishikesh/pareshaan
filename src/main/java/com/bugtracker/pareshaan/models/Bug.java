@@ -20,7 +20,7 @@ public class Bug {
     String links;
     int project_id;
     Status status;
-    Hero reporter;
-    Hero assignee;
-    Hero resolver;
+    int reporter_id;
+    int assignee_id;
+    int resolver_id;
 }
