@@ -1,6 +1,6 @@
 <img src="https://img.shields.io/badge/java-%23ed8b00.svg?logo=openjdk&logoColor=white&style=for-the-badge" alt="Java" /> <img src="https://img.shields.io/badge/spring-%236db33f.svg?logo=spring&logoColor=white&style=for-the-badge" alt="Spring" /> <img src="https://img.shields.io/badge/mysql-%234479a1.svg?logo=mysql&logoColor=white&style=for-the-badge" alt="MySQL" />
 
-The idea behind "Pareshaan" is to build a ridiculously simple bug server for projects.
+The idea behind "Pareshaan" is to build a ridiculously simple bug server for small projects.
 
 ### We want to 
 
