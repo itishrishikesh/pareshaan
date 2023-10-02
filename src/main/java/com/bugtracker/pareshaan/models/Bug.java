@@ -18,9 +18,9 @@ public class Bug {
     String priority;
     String attachment;
     String links;
-    int project_id;
+    int projectId;
     Status status;
-    int reporter_id;
-    int assignee_id;
-    int resolver_id;
+    int reporterId;
+    int assigneeId;
+    int resolverId;
 }
