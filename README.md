@@ -15,3 +15,7 @@ The idea behind "Pareshaan" is to build a ridiculously simple bug server for sma
 - Be a solution for medium to large-scale projects.
 - Add bulky features like file attachments.
 - Support project management.
+
+
+## Everything in this repository is a work in progress!
+## You can create issues if you would like to add anything or be added here!
