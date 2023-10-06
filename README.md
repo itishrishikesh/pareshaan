@@ -4,15 +4,15 @@
   <img src="https://img.shields.io/badge/Postgres-%23336791.svg?logo=postgresql&logoColor=white&style=for-the-badge" alt="Postgres" />
 </center>
 
-# BugGo: Simplified Bug Tracking for Small Projects
+# Pareshaani: Simplified Bug Tracking for Small Projects
 
-Welcome to BugGo, where we make bug tracking ridiculously simple for small projects! If you're tired of complex bug tracking systems with unnecessary bells and whistles, BugGo is here to streamline your bug tracking process.
+Welcome to Pareshaani, where we make bug tracking ridiculously simple for small projects! If you're tired of complex bug tracking systems with unnecessary bells and whistles, Pareshaani is here to streamline your bug tracking process.
 
 ## 🚀 Our Goals
 
-At BugGo, our mission is clear:
+At Pareshaani, our mission is clear:
 
-- **Be Small Project-Friendly:** BugGo is tailored for small projects just starting up with a small number of users.
+- **Be Small Project-Friendly:** Pareshaani is tailored for small projects just starting up with a small number of users.
 - **Simplicity is Key:** We take away all the unnecessary complexity and stick to the basics of bug tracking.
 - **Accessible Bug Reporting:** A simple text-based bug format allows users to report bugs from anywhere.
 - **Effortless Data Management:** Easily back up all your bug data and set up a new instance with the same data effortlessly.
@@ -22,9 +22,9 @@ At BugGo, our mission is clear:
 
 We're committed to staying true to our mission. That means we won't:
 
-- **Scale to Medium or Large Projects:** BugGo is designed exclusively for small projects.
+- **Scale to Medium or Large Projects:** Pareshaani is designed exclusively for small projects.
 - **Bloat with Unnecessary Features:** We won't burden you with hefty file attachments or excessive functionalities.
-- **Project Management:** BugGo's focus is solely on bug tracking.
+- **Project Management:** Pareshaani's focus is solely on bug tracking.
 
 ## 🛠️ Work in Progress
 
