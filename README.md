@@ -1,8 +1,8 @@
-<center>
+<p align='center'>
   <img src="https://img.shields.io/badge/java-%23ed8b00.svg?logo=openjdk&logoColor=white&style=for-the-badge" alt="Java" /> 
   <img src="https://img.shields.io/badge/spring-%236db33f.svg?logo=spring&logoColor=white&style=for-the-badge" alt="Spring" /> 
   <img src="https://img.shields.io/badge/Postgres-%23336791.svg?logo=postgresql&logoColor=white&style=for-the-badge" alt="Postgres" />
-</center>
+</p>
 
 # Pareshaani: Simplified Bug Tracking for Small Projects
 
