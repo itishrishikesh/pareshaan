@@ -1,34 +1,45 @@
+There'll be five key entities of our system,
+1. **User**
+2. **Bug**
+3. **Attachment**
+4. **Comment**
+
+Entity Relationship diagram:
 ```mermaid
 erDiagram
-    HERO ||--o{ PROJECT : "poc"
-    PROJECT }|..o{ BUG : "project_id"
-    HERO ||--o{ BUG : "assigned_to"
-
-    HERO {
-        int id
-        varchar(255) password
-        varchar(255) email
-        varchar(255) name
+    User {
+        int id PK
+        string email
+        string username
     }
-
-    PROJECT {
-        int id
-        varchar(255) name
-        text description
-        int poc
-        varchar(255) email
+    Bug {
+        int id PK
+        string title
+        string description
+        string observed_result
+        string expected_result
+        int user_id FK
+        int attachment_id FK
+        int project
     }
-
-    BUG {
-        int id
-        varchar(255) title
-        text description
-        text steps
-        text attachments
-        text links
-        int project_id
-        varchar(20) status
-        int assigned_to
-        boolean resolved
+    Comment {
+        int id PK
+        int bug_id FK
+        int user_id FK
+        int attachment_id FK
+        string comment
     }
+    Attachment {
+        int id PK
+        int bug_id FK
+        string attachment_url
+    }
+    Bug |{--|| User : "assigned"
+    Bug ||--}o Comment : "have"
+    Bug ||--}o Attachment : "have"
+    User o{--}| Comment : "have"
+    Comment ||--}o Attachment : "have"
 ```
+
+Guidelines for future development:
+- Always use snake case for naming for any column/table name.
