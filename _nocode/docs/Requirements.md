@@ -20,19 +20,6 @@
 
 ## Detailed Requirements
 
-### User Roles
-
-- **Administrator**:
-    - Can create and manage projects.
-    - Can invite users and assign them roles.
-    - Can perform backups and restores. 📂
-
-- **Tester/Developer**:
-    - Can log bugs.
-    - Can view and edit their own bugs.
-    - Can view bugs in projects they are assigned to.
-    - Can export bugs to CSV and JSON. 🐞
-
 ### Bug Logging
 
 - Users can log bugs with the following details:
@@ -52,13 +39,6 @@
 - Users can filter and search for bugs within a project.
 - Simple timestamping of bug creation and last modification.
 
-### Project Management
-
-- Create and manage multiple projects.
-- Define project details such as name and description.
-- Assign users (testers and developers) to specific projects.
-- View a list of projects with their associated bugs.
-
 ### Backup and Restore
 
 - Ability to backup all bug data regularly.
@@ -70,9 +50,8 @@
 - Export bug data to CSV and JSON files.
 - Simple import mechanism to restore bug data from CSV or JSON backups.
 
-### Security and Access Control
+### Security
 
-- Role-based access control (admin, tester, developer).
 - Ensure data security and user authentication.
 - Audit trail for bug changes (who made the change and when).
 
@@ -89,24 +68,4 @@
 ## Basic structure
 
 ```mermaid
-graph TD
-  subgraph "Bug Tracking Software"
-    subgraph "User Management"
-      A[Administrator] -->|Manages Users| B[Tester/Developer]
-    end
-    subgraph "Project"
-      B -->|Manages Projects| C[Project]
-      B -->|Assigned To| C
-    end
-    subgraph "Bug Management"
-      B -->|Logs Bugs| D[Bug]
-      B -->|Manages Bugs| D
-      B -->|Assigned To| D
-    end
-    subgraph "Backup & Export"
-      A -->|Performs Backups| E[Backup]
-      A -->|Performs Restores| E
-      B -->|Exports Bugs| F[CSV/JSON]
-    end
-  end
 ```
