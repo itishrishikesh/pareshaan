@@ -1,4 +1,4 @@
-There'll be five key entities of our system,
+There'll be four key entities of our system,
 1. **User**
 2. **Bug**
 3. **Attachment**
@@ -19,8 +19,7 @@ erDiagram
         string observed_result
         string expected_result
         int user_id FK
-        int attachment_id FK
-        int project
+        int project_id
     }
     Comment {
         int id PK
@@ -35,9 +34,9 @@ erDiagram
         string attachment_url
     }
     Bug |{--|| User : "assigned"
-    Bug ||--}o Comment : "have"
-    Bug ||--}o Attachment : "have"
-    User o{--}| Comment : "have"
+    Comment o{--|| Bug : "have"
+    Attachment o{--|| Bug : "have"
+    Comment ||--|| User : "have"
     Comment ||--}o Attachment : "have"
 ```
 

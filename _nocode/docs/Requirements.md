@@ -15,7 +15,6 @@
 
 🙅‍♂️ **We don't want to:**
 - Be a solution for medium to large-scale projects.
-- Add bulky features like file attachments.
 - Support project management.
 
 ## Detailed Requirements
