@@ -10,14 +10,18 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-    private UserRepository repository;
+    private final UserRepository repository;
 
-    public void addUser(User user) {
-        repository.save(user);
+    public User addUser(User user) {
+        return repository.save(user);
     }
 
     public List<User> getUsers() {
         return repository.findAll();
+    }
+
+    public User getUserById(Long id) {
+    	return repository.findById(id).orElse(null);
     }
 
     public void updateUser(User user) {

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -21,6 +23,6 @@ public class Comment {
     private User user;
     @OneToMany
     @JoinColumn(name = "attachment_id", referencedColumnName = "id")
-    private Attachment attachment;
+    private List<Attachment> attachment;
     private String comment;
 }
