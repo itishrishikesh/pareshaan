@@ -10,14 +10,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class BugService {
-    private BugRepository bugRepository;
+    private final BugRepository bugRepository;
 
-    public void saveBug(Bug bug) {
-        bugRepository.save(bug);
+    public Bug addBug(Bug bug) {
+        return bugRepository.save(bug);
     }
 
     public Bug getBug(Long id) {
         return bugRepository.findById(id).orElse(null);
+    }
+    public List<Bug> getBugByUserId(Long userId) {
+        return bugRepository.findBugByUserId(userId);
     }
 
     public void deleteBug(Long id) {
@@ -29,7 +32,6 @@ public class BugService {
     }
 
     public Bug updateBug(Bug bug) {
-        bugRepository.deleteById(bug.getId());
         return bugRepository.save(bug);
     }
 }

@@ -3,12 +3,13 @@ package com.bugtracker.pareshaan.controller;
 import com.bugtracker.pareshaan.model.User;
 import com.bugtracker.pareshaan.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/pareshaan/user")
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
@@ -22,6 +23,7 @@ public class UserController {
     }
 
     @PostMapping
+    @ResponseStatus(value = HttpStatus.CREATED)
     public User createUser(@RequestBody User user) {
         return userService.addUser(user);
     }
