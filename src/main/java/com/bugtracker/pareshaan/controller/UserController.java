@@ -1,6 +1,7 @@
 package com.bugtracker.pareshaan.controller;
 
 import com.bugtracker.pareshaan.model.User;
+import com.bugtracker.pareshaan.payload.UserDto;
 import com.bugtracker.pareshaan.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -8,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/pareshaan/user")
+@RequestMapping("/pareshaan/api/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+
     @GetMapping("/{id}")
     public User getUser(@PathVariable("id") final Long id) {
         User user = userService.getUserById(id);
@@ -22,7 +24,17 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public UserDto createUser(@RequestBody UserDto user) {
         return userService.addUser(user);
+    }
+
+    @PutMapping
+    public UserDto updateUser(@RequestBody UserDto user) {
+        return userService.updateUser(user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id") final Long id) {
+        userService.delete(id);
     }
 }

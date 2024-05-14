@@ -13,8 +13,5 @@ public class Attachment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "bug_id", referencedColumnName = "id")
-    private Bug bug;
-    private String attachmentUrl;
+    private String fileUrl;
 }
