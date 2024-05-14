@@ -15,14 +15,6 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "bug_id", referencedColumnName = "id")
-    private Bug bug;
-    @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private String content;
     private User user;
-    @OneToMany
-    @JoinColumn(name = "attachment_id", referencedColumnName = "id")
-    private List<Attachment> attachment;
-    private String comment;
 }

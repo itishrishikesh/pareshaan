@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -13,12 +15,11 @@ public class Bug {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
-    private String observedResult;
-    private String expectedResult;
+    private String summary;
     private String description;
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
-    private Long projectId;
+    private List<String> steps;
+    private User reporter;
+    private User assigned;
+    private List<Comment> comments;
+    private List<Attachment> attachments;
 }

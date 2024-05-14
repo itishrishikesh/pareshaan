@@ -1,6 +1,8 @@
 package com.bugtracker.pareshaan.service;
 
+import com.bugtracker.pareshaan.mapper.UserMapper;
 import com.bugtracker.pareshaan.model.User;
+import com.bugtracker.pareshaan.payload.UserDto;
 import com.bugtracker.pareshaan.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,8 +14,9 @@ import java.util.List;
 public class UserService {
     private final UserRepository repository;
 
-    public User addUser(User user) {
-        return repository.save(user);
+    public UserDto addUser(UserDto user) {
+        User userToSave = UserMapper.INSTANCE.userDtoToUser(user);
+        return UserMapper.INSTANCE.userToUserDto(repository.save(userToSave));
     }
 
     public List<User> getUsers() {
@@ -24,12 +27,17 @@ public class UserService {
     	return repository.findById(id).orElse(null);
     }
 
-    public void updateUser(User user) {
-        repository.removeUserByUsername(user.getUsername());
-        repository.save(user);
+    public UserDto updateUser(UserDto user) {
+
+        repository.findById(user.getId()).orElseThrow();
+
+        User userToUpdate = UserMapper.INSTANCE.userDtoToUser(user);
+
+        return UserMapper.INSTANCE.userToUserDto(repository.save(userToUpdate));
     }
 
-    public void delete(User user) {
-        repository.removeUserByUsername(user.getUsername());
+    public void delete(Long id) {
+        repository.findById(id).orElseThrow();
+        repository.deleteById(id);
     }
 }
