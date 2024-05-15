@@ -1,6 +1,8 @@
 package com.bugtracker.pareshaan.service;
 
+import com.bugtracker.pareshaan.mapper.BugMapper;
 import com.bugtracker.pareshaan.model.Bug;
+import com.bugtracker.pareshaan.payload.BugDto;
 import com.bugtracker.pareshaan.repository.BugRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,8 +14,9 @@ import java.util.List;
 public class BugService {
     private BugRepository bugRepository;
 
-    public void saveBug(Bug bug) {
-        bugRepository.save(bug);
+    public BugDto saveBug(BugDto bug) {
+
+        return BugMapper.Instance.bugToBugDto(bugRepository.save(BugMapper.Instance.bugDtoToBug(bug)));
     }
 
     public Bug getBug(Long id) {

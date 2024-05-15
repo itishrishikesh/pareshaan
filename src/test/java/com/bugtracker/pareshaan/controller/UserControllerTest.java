@@ -30,4 +30,11 @@ public class UserControllerTest {
         UserDto result = userController.createUser(userDto);
         Assertions.assertEquals(userDto, result);
     }
+
+    @Test
+    public void userLogin() {
+        String username = "jeremiah";
+        String password = "john";
+        // Todo: Build login
+    }
 }
