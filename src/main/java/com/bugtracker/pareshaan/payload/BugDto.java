@@ -1,29 +1,26 @@
-package com.bugtracker.pareshaan.model;
+package com.bugtracker.pareshaan.payload;
 
-import jakarta.persistence.*;
+import com.bugtracker.pareshaan.model.Attachment;
+import com.bugtracker.pareshaan.model.Comment;
+import com.bugtracker.pareshaan.model.User;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Bug {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+@Builder
+public class BugDto {
     private Long id;
     private String summary;
     private String description;
     private List<String> steps;
     private User reporter;
     private User assigned;
-    @OneToMany
-    @JoinColumn(name = "bug_id", referencedColumnName = "id")
     private List<Comment> comments;
-    @OneToMany
-    @JoinColumn(name = "bug_id", referencedColumnName = "id")
     private List<Attachment> attachments;
 }
