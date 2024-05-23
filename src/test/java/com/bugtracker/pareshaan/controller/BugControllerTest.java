@@ -37,4 +37,23 @@ public class BugControllerTest {
 
         Assertions.assertEquals(bugDto, response.getBody());
     }
+
+    @Test
+    public void updateBugTest() {
+        BugDto.BugDtoBuilder bugDtoBuilder = BugDto.builder();
+        bugDtoBuilder.summary("No response on button click on the main page.");
+        bugDtoBuilder.description("Please contact the project owner for more details");
+        BugDto bugDto = bugDtoBuilder.build();
+
+        Mockito.when(bugService.updateBug(bugDto)).thenReturn(bugDto);
+
+        ResponseEntity<BugDto> response = bugController.updateBug(bugDto);
+
+        Assertions.assertEquals(bugDto, response.getBody());
+    }
+
+    @Test
+    public void getAllBugs() {
+
+    }
 }
