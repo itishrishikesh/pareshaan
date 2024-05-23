@@ -41,7 +41,7 @@ public class UserController {
         userService.delete(id);
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@RequestBody LoginResponseDto loginResponseDto) {
         // Todo: Implement Login
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);

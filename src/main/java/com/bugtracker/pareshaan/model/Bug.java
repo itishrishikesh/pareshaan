@@ -17,8 +17,13 @@ public class Bug {
     private Long id;
     private String summary;
     private String description;
+    @ElementCollection
     private List<String> steps;
+    @OneToOne
+    @JoinColumn(name = "reporter_id", referencedColumnName = "id")
     private User reporter;
+    @OneToOne
+    @JoinColumn(name = "assigned_id", referencedColumnName = "id")
     private User assigned;
     @OneToMany
     @JoinColumn(name = "bug_id", referencedColumnName = "id")
